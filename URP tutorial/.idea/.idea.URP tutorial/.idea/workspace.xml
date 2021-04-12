@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ec3a78d-539a-4b66-8b7d-63c0b4b5fab0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.URP tutorial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.URP tutorial/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Basic01.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Basic01.shader" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +81,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617799878665</updated>
-      <workItem from="1617799892696" duration="2310000" />
+      <workItem from="1617799892696" duration="4242000" />
+      <workItem from="1618235000871" duration="3634000" />
     </task>
     <servers />
   </component>
@@ -100,6 +101,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

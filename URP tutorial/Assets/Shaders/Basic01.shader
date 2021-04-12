@@ -46,7 +46,8 @@ Shader "Custom/Basic01"
             };
 
             half4 _TintColor;
-            
+            float _Intensity;
+
             //버텍스 셰이더
             VertexOutput vert(VertexInput v)
             {
@@ -59,7 +60,7 @@ Shader "Custom/Basic01"
             //픽셀 셰이더
             half4 frag(VertexOutput i) : SV_Target
             {
-                return half4(_TintColor);
+                return half4(_TintColor) * _Intensity;
             }
             ENDHLSL
         }
