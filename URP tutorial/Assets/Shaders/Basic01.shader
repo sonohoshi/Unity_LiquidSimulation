@@ -5,6 +5,7 @@ Shader "Custom/Basic01"
         // Properties Block : 셰이더에서 사용할 변수를 선언하고 이를 material inspector에 노출시킵니다
         _TintColor("Test Color", color) = (1,1,1,1)
         _Intensity("Range Sample", Range(0,1)) = 0.5
+        _MainTex("Main Texture", 2D) = "white"{}
     }
 
     SubShader
@@ -37,22 +38,29 @@ Shader "Custom/Basic01"
             struct VertexInput
             {
                 float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
             };
 
             //보간기를 통해 버텍스 셰이더에서 픽셀 셰이더로 전달할 정보를 선언합니다.
             struct VertexOutput
             {
                 float4 vertex : SV_POSITION;
+                float2 uv : TEXCOORD0;
+                float3 positionWS : COLOR;
             };
 
             half4 _TintColor;
             float _Intensity;
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
 
             //버텍스 셰이더
             VertexOutput vert(VertexInput v)
             {
                 VertexOutput o;
                 o.vertex = TransformObjectToHClip(v.vertex.xyz);
+                o.positionWS = TransformObjectToWorld(v.vertex.xyz);
+                o.uv = v.uv.xy;
 
                 return o;
             }
@@ -60,7 +68,10 @@ Shader "Custom/Basic01"
             //픽셀 셰이더
             half4 frag(VertexOutput i) : SV_Target
             {
-                return half4(_TintColor) * _Intensity;
+                float2 uv = i.uv.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+                float4 color = tex2D(_MainTex, i.positionWS.xz) * _TintColor * _Intensity;
+
+                return color;
             }
             ENDHLSL
         }
